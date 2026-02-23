@@ -1,0 +1,27 @@
+#!/bin/bash
+
+VALID_LOGIN="admin"
+VALID_PASSWORD="password123"
+
+# Проверка наличия аргумента
+if [ -z "$1" ]; then
+    echo "ыускуе"
+    exit 1
+fi
+
+# Проверка логина
+if [ "$1" = "$VALID_LOGIN" ]; then
+    read -sp "Введите пароль: " user_pass
+    echo
+
+    # Проверка пароля
+    if [ "$user_pass" = "$VALID_PASSWORD" ]; then
+        echo "gl0kayakyzdr@"
+    else
+        echo "ыускуе"
+        exit 1
+    fi
+else
+    echo "ыускуе"
+    exit 1
+fi
